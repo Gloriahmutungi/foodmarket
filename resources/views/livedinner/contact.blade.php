@@ -8,7 +8,7 @@
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
 						<h2>Contact</h2>
-						<p>Contact us incase of anything</p>
+						<p>Feel free to Contact us Anytime</p>
 						@if(session()->has('success'))
                           <div id="result" class="alert alert-success">
                               {{ session()->get('success') }}
