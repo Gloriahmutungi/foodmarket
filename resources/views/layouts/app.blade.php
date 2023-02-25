@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
+    @livewireStyles
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
      <!-- Site Metas -->
-	<title>{{ isset($title) ? config('app.name').'-'.$title  : config('app.name') }}</title> 
+	<title>{{ isset($title) ? config('app.name').'-'.$title  : config('app.name') }}</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,9 +19,9 @@
     <link rel="apple-touch-icon" href="{{ asset('dinner/images/apple-touch-icon.png') }}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('dinner/css/bootstrap.min.css') }}">    
+    <link rel="stylesheet" href="{{ asset('dinner/css/bootstrap.min.css') }}">
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="{{ asset('dinner/css/style.css') }}">    
+    <link rel="stylesheet" href="{{ asset('dinner/css/style.css') }}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('dinner/css/responsive.css') }}">
     <!-- Custom CSS -->
@@ -30,10 +31,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+
 
 </head>
 
 <body>
+    {!! Toastr::message() !!}
 	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -155,7 +160,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
@@ -165,9 +170,10 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer>
 	<!-- End Footer -->
     @include('layouts.scripts')
+
     </body>
 </html>

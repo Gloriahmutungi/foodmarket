@@ -25,5 +25,19 @@
 					infoWindow: 'Live Dinner Restaurant'
 				}
 			]
-		});	
+		});
 	</script>
+ <script>
+    window.addEventListener('alert', event => {
+        toastr[event.detail.type](event.detail.message,
+            event.detail.title ?? ''), toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-bottom-right",
+        }
+    });
+</script>
+
+        <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+@livewireScripts
+

@@ -52,22 +52,22 @@ class UserController extends Controller
                 'password'=>'required'
             ]);
             //check if email exists
-        $user = User::where('email', '=', $request->email)->first();
-        if (!($user === null)) { 
-            $credentials = $request->only('email', 'password');
-            // check if email & password are correct
-        if (Auth::attempt($credentials)) {
-            // Auth::user()->last_login = new DateTime;
-             Auth::user()->save();
-            // Session::flash('success','You have logged In successfully!'); //<--FLASH MESSAGE
-            return redirect()->route("homepage");   
-            }
-            else{
-                Session::flash('fail','Opps! You have entered invalid credentials'); //<--FLASH MESSAGE
-                return redirect()->route("login");  
+            $user = User::where('email', '=', $request->email)->first();
+            if (!($user === null)) { 
+                $credentials = $request->only('email', 'password');
+                // check if email & password are correct
+            if (Auth::attempt($credentials)) {
+                // Auth::user()->last_login = new DateTime;
+                Auth::user()->save();
+                // Session::flash('success','You have logged In successfully!'); //<--FLASH MESSAGE
+                return redirect()->route("homepage");   
                 }
-            } 
-        }
+                else{
+                    Session::flash('fail','Opps! You have entered invalid credentials'); //<--FLASH MESSAGE
+                    return redirect()->route("login");  
+                    }
+                } 
+            }
         public function logout() {
             Session::flush();
             Auth::logout();
