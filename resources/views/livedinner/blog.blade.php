@@ -5,7 +5,11 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
+<<<<<<< HEAD
 					<h1>Blog news</h1>
+=======
+					<h1>Blog News</h1>
+>>>>>>> d4a567dcda7da28be02f75bd3eef1618bb81261f
 				</div>
 			</div>
 		</div>
